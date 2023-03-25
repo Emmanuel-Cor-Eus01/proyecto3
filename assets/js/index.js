@@ -1,17 +1,79 @@
 (()=>{
-    function Pokemon(id){
-        let url = (`https://pokeapi.co/api/v2/pokemon/`);
-        fetch(url+id+`/`)
-        .then(response => response.json())
-        .then(data=>{
-            console.log(data);
-        })
+  document.getElementById("prev").addEventListener("click", prev);
+  document.getElementById("next").addEventListener("click", next);
+  const myChart = document.getElementById('myChart').getContext('2d');
+  const pokeContent = document.getElementById("poke-content");
+  let offset = 1;
+  function prev(){
+    if (offset != 1) {
+      offset -= 1;
+      Pokemons(offset);
     }
-    function Pokemons(number){
-        for(let i = 1; i = number; i++){
-            const pokemon=data[i];
-            Pokemons(i);
-        }
+  }
+  function next(){
+    offset += 1;
+  if(offset !=1010){
+    //aqui va el mensaje de que ya no hay pokemon
+  }
+  Pokemons(offset);
+  }
+  function Pokemon(id) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+      .then((res) => res.json())
+      .then((data) => {
+        createPokemon(data);
+      });
+  }
+
+  function Pokemons(offset) {
+    for (let i = offset; i <= offset; i++) {
+      Pokemon(i);
     }
-    Pokemon(9);
-})()
+  }
+  function createPokemon(pokemon){
+    const flipCard = document.createElement("div");
+    flipCard.classList.add("flip-card");
+  
+    const cardContainer = document.createElement("div");
+    cardContainer.classList.add("card-container");
+  
+    flipCard.appendChild(cardContainer);
+  
+    const card = document.createElement("div");
+    card.classList.add("pokemon-block");
+  
+    const spriteContainer = document.createElement("div");
+    spriteContainer.classList.add("img-container");
+  
+    const sprite = document.createElement("img");
+    sprite.src = pokemon.sprites.front_default;
+  
+    spriteContainer.appendChild(sprite);
+  
+    const number = document.createElement("p");
+    number.textContent = `#${pokemon.id.toString().padStart(3, 0)}`;
+  
+    const name = document.createElement("p");
+    name.classList.add("name");
+    name.textContent = pokemon.name;
+  
+    card.appendChild(spriteContainer);
+    card.appendChild(number);
+    card.appendChild(name);
+  
+    const cardStat = document.createElement("div");
+    cardStat.classList.add("poke-grafic");
+  
+   //cardStat.appendChild(progressBars(pokemon.stats));
+  
+    cardContainer.appendChild(card);
+    cardContainer.appendChild(cardStat);
+    pokeContent.appendChild(flipCard);
+  
+  }
+
+ 
+  
+
+  Pokemons(offset);
+})();
