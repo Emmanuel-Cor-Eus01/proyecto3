@@ -34,38 +34,38 @@
         //console.log(data.stats);
         stats = data.stats;
         console.log(stats);
-      //   myChart1 = new Chart(myChart, {
-      //     type: 'radar',
-      //     data: {
-      //         labels: ['HP', 'Ataque', 'Defensa', 'Ataque Especial', 'Defensa Especial', 'Velocidad'],
-      //         datasets: [{
-      //             label: 'Habilidades',
-      //             data: [
-      //             stats[0].base_stat,
-      //             stats[1].base_stat,
-      //             stats[2].base_stat,
-      //             stats[3].base_stat,
-      //             stats[4].base_stat,
-      //             stats[5].base_stat
-      //           ],
-      //             backgroundColor: [
-      //                 'rgba(224, 240, 242, 0.2)'
-      //             ],
-      //             borderColor: [
-      //                 'rgba(224, 240, 242, 1)'
-      //             ],
-      //             borderWidth: 1
-      //         }]
-      //     },
-      //     options: {
-      //         scales: {
-      //             y: {
-      //                 beginAtZero: true
-      //             }
-      //         }
-      //     }
-      // });
-       });
+        myChart1 = new Chart(myChart, {
+          type: 'radar',
+          data: {
+              labels: ['HP', 'Ataque', 'Defensa', 'Ataque Especial', 'Defensa Especial', 'Velocidad'],
+              datasets: [{
+                  label: 'Habilidades',
+                  data: [
+                  stats[0].base_stat,
+                  stats[1].base_stat,
+                  stats[2].base_stat,
+                  stats[3].base_stat,
+                  stats[4].base_stat,
+                  stats[5].base_stat
+                ],
+                  backgroundColor: [
+                      'rgba(224, 240, 242, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(224, 240, 242, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+      });
+      });
   }
 
   function Pokemons(offset) {
