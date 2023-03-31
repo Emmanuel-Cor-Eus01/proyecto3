@@ -17,19 +17,6 @@
   }
   function next(){
     offset += 1;
-  if(offset >= 1010){
-      Swal.fire(
-          {
-              icon: "error",
-              title: "Mensaje",
-              text: "Ya no hay mas pokemon",
-              showCancelButton: true,
-              confirmButtonColor: '#A5E041',
-              cancelButtonColor: '#FA0CDC',
-          }
-      );
-      return;
-  }
   if (myChart1){
     myChart1.destroy();
   }
