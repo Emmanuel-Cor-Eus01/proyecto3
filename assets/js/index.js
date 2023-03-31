@@ -18,7 +18,17 @@
   function next(){
     offset += 1;
   if(offset !=1010){
-    //aqui va el mensaje de que ya no hay pokemon
+      Swal.fire(
+          {
+              icon: "error",
+              title: "Mensaje",
+              text: "Ya no hay mas pokemon",
+              showCancelButton: true,
+              confirmButtonColor: '#A5E041',
+              cancelButtonColor: '#FA0CDC',
+          }
+      );
+      return;
   }
   if (myChart1){
     myChart1.destroy();
@@ -31,7 +41,6 @@
       .then((res) => res.json())
       .then((data) => {
         createPokemon(data);
-        //console.log(data.stats);
         stats = data.stats;
         console.log(stats);
         myChart1 = new Chart(myChart, {

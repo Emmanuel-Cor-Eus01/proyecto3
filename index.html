@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Proyecto 3</title>
 </head>
@@ -13,13 +15,17 @@
   <div><h1>POKEDEX</h1></div>
   <div class="text-center" id="poke-content">
   </div>
-  <div class="text-center" id="stats-grafic">
+  <div class="mt-4 text-center" id="stats-grafic">
     <h1>GRAFICA DE HABILIDADES</h1>
     <p class="hp" id="hp"></p>
-    <canvas id="myChart" width = "400" height = "250"></canvas>
+    <canvas class="mt-4" id="myChart" width = "400" height = "250"></canvas>
   </div>
-  <button id="prev">Anterior</button>
-  <button id="next">Siguiente</button>
+  <div class="row mt-4">
+    <div class="d-grid gap-2">
+      <button class=" btn btn-danger" type="button" id="prev">Anterior</button>
+      <button class="btn btn-primary" type="button" id="next">Siguiente</button>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
