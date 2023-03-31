@@ -17,7 +17,7 @@
   }
   function next(){
     offset += 1;
-  if(offset !=1010){
+  if(offset <= 1010){
       Swal.fire(
           {
               icon: "error",
